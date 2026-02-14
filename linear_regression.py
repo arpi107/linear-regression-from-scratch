@@ -9,46 +9,54 @@ print("Output (y):", y)
 # Step 2: Initialize parameters
 m = 0
 b = 0
-
-# Step 3: Make predictions
-predictions = []
-
-for i in x:
-    p = m * i + b
-    predictions.append(p)
-
-
-print("Predictions: ",predictions)
-
-# Step 4: Calculate Mean Squared Error
-
-total_error = 0
-
-for i in range(len(y)):
-    error = (y[i] - predictions[i]) ** 2
-    total_error += error
-
-mse = total_error/len(y)
-
-print("Mean Squared Error:", mse)
-
-
-# Step 5: Calculate gradient for m
-
-n = len(x)
-gradient_m = 0
-
-for i in range(n):
-    gradient_m +=x[i] * ( y[i] - predictions[i])
-
-gradient_m = (-2 / n) * gradient_m
-
-print("Gradient for m:", gradient_m)
-
-# Step 6: Update m using Gradient Descent
-
 learning_rate = 0.01
+epochs = 100
+n = len(x)
 
-m = m - learning_rate * gradient_m
+for epoch in range(epochs):
 
-print("Updated m:", m)
+    # Step 1: Make predictions
+    predictions = []
+
+    for i in x:
+        p = m * i + b
+        predictions.append(p)
+
+
+
+
+    # Step 2: Calculate Mean Squared Error
+
+    total_error = 0
+
+    for i in range(len(y)):
+        error = (y[i] - predictions[i]) ** 2
+        total_error += error
+
+    mse = total_error/len(y)
+
+
+
+
+    # Step 3: Calculate gradient for m
+
+    
+    gradient_m = 0
+
+    for i in range(n):
+        gradient_m +=x[i] * ( y[i] - predictions[i])
+
+    gradient_m = (-2 / n) * gradient_m
+
+
+
+    # Step 4: Update m using Gradient Descent
+
+    
+
+    m = m - learning_rate * gradient_m
+    if epoch % 10 == 0:
+        print(f"Epoch {epoch}, Loss: {mse}")
+
+print("Final m:", m)
+
