@@ -44,3 +44,11 @@ for i in range(n):
 gradient_m = (-2 / n) * gradient_m
 
 print("Gradient for m:", gradient_m)
+
+# Step 6: Update m using Gradient Descent
+
+learning_rate = 0.01
+
+m = m - learning_rate * gradient_m
+
+print("Updated m:", m)
