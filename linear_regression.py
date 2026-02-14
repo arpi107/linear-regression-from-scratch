@@ -48,11 +48,19 @@ for epoch in range(epochs):
 
     gradient_m = (-2 / n) * gradient_m
 
+    # Step 3b: Compute Gradient for b
+
+    gradient_b = 0
+    for i in range(n):
+        gradient_b += (y[i] - predictions[i])
+
+    gradient_b = (-2 / n) * gradient_b
 
 
-    # Step 4: Update m using Gradient Descent
+    # Step 4: Update m and b using Gradient Descent
 
-    
+    b = b - learning_rate * gradient_b
+
 
     m = m - learning_rate * gradient_m
     if epoch % 10 == 0:
