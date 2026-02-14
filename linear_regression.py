@@ -19,3 +19,15 @@ for i in x:
 
 
 print("Predictions: ",predictions)
+
+# Step 4: Calculate Mean Squared Error
+
+total_error = 0
+
+for i in range(len(y)):
+    error = (y[i] - predictions[i]) ** 2
+    total_error += error
+
+mse = total_error/len(y)
+
+print("Mean Squared Error:", mse)
