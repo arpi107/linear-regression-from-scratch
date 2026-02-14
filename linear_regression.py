@@ -67,4 +67,5 @@ for epoch in range(epochs):
         print(f"Epoch {epoch}, Loss: {mse}")
 
 print("Final m:", m)
+print("Final b:", b)
 
