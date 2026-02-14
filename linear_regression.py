@@ -10,7 +10,7 @@ print("Output (y):", y)
 m = 0
 b = 0
 learning_rate = 0.01
-epochs = 100
+epochs = 1000
 n = len(x)
 
 for epoch in range(epochs):
