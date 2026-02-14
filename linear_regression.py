@@ -31,3 +31,16 @@ for i in range(len(y)):
 mse = total_error/len(y)
 
 print("Mean Squared Error:", mse)
+
+
+# Step 5: Calculate gradient for m
+
+n = len(x)
+gradient_m = 0
+
+for i in range(n):
+    gradient_m +=x[i] * ( y[i] - predictions[i])
+
+gradient_m = (-2 / n) * gradient_m
+
+print("Gradient for m:", gradient_m)
